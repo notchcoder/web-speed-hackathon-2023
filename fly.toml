@@ -1,12 +1,9 @@
-# fly.toml file generated for ca-web-speed-2023 on 2023-03-04T13:32:56+09:00
+# fly.toml file generated for floral-resonance-9252 on 2023-03-04T14:43:52+09:00
 
-app = "ca-web-speed-2023"
+app = "floral-resonance-9252"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  image = "flyio/hellofly:latest"
 
 [env]
 
