@@ -13,6 +13,7 @@ import { useAuthUser } from '../../hooks/useAuthUser';
 import { useRecommendation } from '../../hooks/useRecommendation';
 
 import * as styles from './OrderComplete.styles';
+import '../../../client/style.css'
 
 export const OrderComplete: FC = () => {
   const navigate = useNavigate();

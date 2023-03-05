@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { Layout } from '../../components/application/Layout';
 
 import * as styles from './NotFound.styles';
+import '../../../client/style.css'
 
 export const NotFound: FC = () => {
 
