@@ -14,7 +14,7 @@ export const Image: FC<Props> = ({ fill, src, ...rest }) => {
       className={classNames(styles.container(), {
         [styles.container__fill()]: fill === true,
       })}
-      loading="eager"
+      loading="lazy"
       src={src.replace('.jpg', '.webp')}
       {...rest}
     />
