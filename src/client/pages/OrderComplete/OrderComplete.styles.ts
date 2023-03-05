@@ -24,7 +24,7 @@ export const noticeDescriptionWrapper = () => css`
 `;
 
 export const noticeDescription = () => css`
-  font-family: sans-serif;
+  font-family: 'Noto Serif JP', sans-serif;
   text-align: center;
 `;
 
