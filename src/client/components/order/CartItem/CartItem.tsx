@@ -1,13 +1,14 @@
 import classNames from 'classnames';
 import * as currencyFormatter from 'currency-formatter';
 import type { ChangeEventHandler, FC } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import type { ShoppingCartItemFragmentResponse } from '../../../graphql/fragments';
 import { useActiveOffer } from '../../../hooks/useActiveOffer';
 import { normalizeCartItemCount } from '../../../utils/normalize_cart_item';
 import { Anchor } from '../../foundation/Anchor';
 import { AspectRatio } from '../../foundation/AspectRatio';
-import { DeviceType, GetDeviceType } from '../../foundation/GetDeviceType';
+import { DeviceType } from '../../foundation/GetDeviceType';
 import { Image } from '../../foundation/Image';
 import { OutlineButton } from '../../foundation/OutlineButton';
 import { ProductOfferLabel } from '../../product/ProductOfferLabel';
@@ -29,11 +30,11 @@ export const CartItem: FC<Props> = ({ item, onRemove, onUpdate }) => {
     const count = normalizeCartItemCount(ev.target.valueAsNumber || 1);
     onUpdate(item.product.id, count);
   };
+  const deviceType: DeviceType = useMediaQuery({ minWidth: 1024 })?DeviceType.DESKTOP:DeviceType.MOBILE;
+
 
   return (
-    <GetDeviceType>
-      {({ deviceType }) => {
-        return (
+    <>
           <div
             className={classNames(styles.container(), {
               [styles.container__desktop()]: deviceType === DeviceType.DESKTOP,
@@ -91,8 +92,6 @@ export const CartItem: FC<Props> = ({ item, onRemove, onUpdate }) => {
               </OutlineButton>
             </div>
           </div>
-        );
-      }}
-    </GetDeviceType>
+    </>
   );
 };

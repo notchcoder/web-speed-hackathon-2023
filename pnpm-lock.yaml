@@ -67,6 +67,7 @@ specifiers:
   react-icons: 4.7.1
   react-is: 18.2.0
   react-overlays: 5.2.1
+  react-responsive: 9.0.2
   react-router-dom: 6.4.5
   recoil: 0.7.6
   reflect-metadata: 0.1.13
@@ -120,6 +121,7 @@ dependencies:
   react-icons: 4.7.1_react@18.2.0
   react-is: 18.2.0
   react-overlays: 5.2.1_biqbaboplfbrettd7655fr4n2y
+  react-responsive: 9.0.2_react@18.2.0
   react-router-dom: 6.4.5_biqbaboplfbrettd7655fr4n2y
   recoil: 0.7.6_biqbaboplfbrettd7655fr4n2y
   reflect-metadata: 0.1.13
@@ -2608,6 +2610,10 @@ packages:
     engines: {node: '>=12.22'}
     dev: true
 
+  /css-mediaquery/0.1.2:
+    resolution: {integrity: sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==}
+    dev: false
+
   /css-to-react-native/3.1.0:
     resolution: {integrity: sha512-AryfkFA29b4I3vG7N4kxFboq15DxwSXzhXM37XNEjwJMgjYIc8BcqfiprpAqX0zadI5PMByEIwAMzXxk5Vcc4g==}
     dependencies:
@@ -3996,6 +4002,10 @@ packages:
     resolution: {integrity: sha512-un3ZAcNQGI7RzaWGZzQDH47HETM4Wrj6z6E4TId8Yeq9w5ZKUVB1nrT2jwFheTUjEmqcgTjXDc959jum+ai1kQ==}
     dev: false
 
+  /hyphenate-style-name/1.0.4:
+    resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
+    dev: false
+
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -4617,6 +4627,12 @@ packages:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /matchmediaquery/0.3.1:
+    resolution: {integrity: sha512-Hlk20WQHRIm9EE9luN1kjRjYXAQToHOIAHPJn9buxBwuhfTHoKUcX+lXBbxc85DVQfXYbEQ4HcwQdd128E3qHQ==}
+    dependencies:
+      css-mediaquery: 0.1.2
+    dev: false
 
   /mathml-tag-names/2.1.3:
     resolution: {integrity: sha512-APMBEanjybaPzUrfqU0IMU5I0AswKMH7k8OTLs0vvV4KZpExkTkY87nR/zpbuTPj+gARop7aGUbl11pnDfW6xg==}
@@ -5480,6 +5496,19 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /react-responsive/9.0.2_react@18.2.0:
+    resolution: {integrity: sha512-+4CCab7z8G8glgJoRjAwocsgsv6VA2w7JPxFWHRc7kvz8mec1/K5LutNC2MG28Mn8mu6+bu04XZxHv5gyfT7xQ==}
+    engines: {node: '>=0.10'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      hyphenate-style-name: 1.0.4
+      matchmediaquery: 0.3.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      shallow-equal: 1.2.1
+    dev: false
+
   /react-router-dom/6.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-a7HsgikBR0wNfroBHcZUCd9+mLRqZS8R5U1Z1mzLWxFXEkUT3vR1XXmSIVoVpxVX8Bar0nQYYYc9Yipq8dWwAA==}
     engines: {node: '>=14'}
@@ -5804,6 +5833,10 @@ packages:
     dependencies:
       inherits: 2.0.4
       safe-buffer: 5.2.1
+    dev: false
+
+  /shallow-equal/1.2.1:
+    resolution: {integrity: sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==}
     dev: false
 
   /shallowequal/1.1.0:

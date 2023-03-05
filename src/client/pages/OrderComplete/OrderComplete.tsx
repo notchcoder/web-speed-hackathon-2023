@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 import type { FC } from 'react';
 import { Helmet } from 'react-helmet';
+import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 
 import { Layout } from '../../components/application/Layout';
 import { AspectRatio } from '../../components/foundation/AspectRatio';
-import { DeviceType, GetDeviceType } from '../../components/foundation/GetDeviceType';
+import { DeviceType } from '../../components/foundation/GetDeviceType';
 import { PrimaryAnchor } from '../../components/foundation/PrimaryAnchor';
 import { WidthRestriction } from '../../components/foundation/WidthRestriction';
 import { ProductHeroImage } from '../../components/product/ProductHeroImage';
@@ -19,6 +20,7 @@ export const OrderComplete: FC = () => {
   const navigate = useNavigate();
   const { authUserLoading, isAuthUser } = useAuthUser();
   const { recommendation } = useRecommendation();
+  const deviceType: DeviceType = useMediaQuery({ minWidth: 1024 })?DeviceType.DESKTOP:DeviceType.MOBILE;
 
   if (!recommendation || authUserLoading) {
     return null;
@@ -34,8 +36,7 @@ export const OrderComplete: FC = () => {
         <title>購入が完了しました</title>
       </Helmet>
       <Layout>
-        <GetDeviceType>
-          {({ deviceType }) => (
+        <>
             <WidthRestriction>
               <div className={styles.container()}>
                 <div className={styles.notice()}>
@@ -66,8 +67,7 @@ export const OrderComplete: FC = () => {
                 </div>
               </div>
             </WidthRestriction>
-          )}
-        </GetDeviceType>
+        </>
       </Layout>
     </>
   );

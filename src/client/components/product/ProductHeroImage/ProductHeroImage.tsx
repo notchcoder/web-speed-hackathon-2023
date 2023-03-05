@@ -4,11 +4,12 @@ import classNames from 'classnames';
 import _ from 'lodash';
 import { memo, useEffect, useState } from 'react';
 import type { FC } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import type { ProductFragmentResponse } from '../../../graphql/fragments';
 import { Anchor } from '../../foundation/Anchor';
 import { AspectRatio } from '../../foundation/AspectRatio';
-import { DeviceType, GetDeviceType } from '../../foundation/GetDeviceType';
+import { DeviceType } from '../../foundation/GetDeviceType';
 import { WidthRestriction } from '../../foundation/WidthRestriction';
 
 import * as styles from './ProductHeroImage.styles';
@@ -45,6 +46,8 @@ export const ProductHeroImage: FC<Props> = memo(({ product, title }) => {
 
   const [imageDataUrl, setImageDataUrl] = useState<string>();
 
+  const deviceType: DeviceType = useMediaQuery({ minWidth: 1024 })?DeviceType.DESKTOP:DeviceType.MOBILE;
+
   useEffect(() => {
     if (thumbnailFile == null) {
       return;
@@ -57,9 +60,7 @@ export const ProductHeroImage: FC<Props> = memo(({ product, title }) => {
   }
 
   return (
-    <GetDeviceType>
-      {({ deviceType }) => {
-        return (
+    <>
           <WidthRestriction>
             <Anchor href={`/product/${product.id}`}>
               <div className={styles.container()}>
@@ -88,9 +89,7 @@ export const ProductHeroImage: FC<Props> = memo(({ product, title }) => {
               </div>
             </Anchor>
           </WidthRestriction>
-        );
-      }}
-    </GetDeviceType>
+    </>
   );
 }, _.isEqual);
 
